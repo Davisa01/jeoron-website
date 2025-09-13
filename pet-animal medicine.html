@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Animal Medicine | Jeoron</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .medicine-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .medicine-img {
+      flex: 1 1 45%;
+      max-width: 500px;
+    }
+
+    .medicine-img img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .medicine-content {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .medicine-content h1 {
+      font-size: 30px;
+      color: #005B50;
+      margin-bottom: 10px;
+    }
+
+    .medicine-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .medicine-content h3 {
+      color: #2BAE8E;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .action-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #2BAE8E, #005B50);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background: linear-gradient(90deg, #005B50, #2BAE8E);
+    }
+
+    @media (max-width: 768px) {
+      .medicine-wrapper {
+        flex-direction: column;
+      }
+
+      .medicine-img,
+      .medicine-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="medicine-wrapper">
+    <div class="medicine-img">
+      <img src="image/boost with mega.jpg" alt="Pet Animal Medicine" />
+    </div>
+
+    <div class="medicine-content">
+      <h1>Pet Animal Medicine</h1>
+      <p>
+        At Jeoron, we provide carefully formulated veterinary solutions designed specifically for household pets such as dogs and cats.
+        These medicines ensure safety, fast recovery, and long-term health benefits for your beloved animals.
+      </p>
+
+      <h3>Overview</h3>
+      <p>
+        Our Pet Animal Medicine range covers common pet health concerns including deworming, vaccination, immune support,
+        and treatment of common infections. Our products meet strict veterinary standards and are trusted by professionals.
+      </p>
+
+      <p>
+        Whether your pet needs routine health maintenance or treatment during illness, Jeoron provides quality, reliable, and effective products.
+        Available for retail and wholesale purchase across Nigeria.
+      </p>
+
+      <a href="contact.html" class="action-btn">Contact Us</a>
+    </div>
+  </section>
+
+</body>
+</html>

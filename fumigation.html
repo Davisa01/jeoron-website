@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeoron-Fumigation</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+    <style>
+    /* Hero Section */
+    .fumigation-hero {
+      position: relative;
+      height: 100vh;
+      background: url('image/hero-fumigation\ \(1\).jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .fumigation-hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); /* Dark overlay for readability */
+    }
+    .fumigation-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .fumigation-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .fumigation-hero p {
+      font-size: 1.2rem;
+      color: #ff4444;
+      font-weight: 600;
+    }
+
+
+
+
+
+    /* 2 SECTION */
+
+    .about-section {
+    padding: 60px 20px;
+    background-color:#dbe7e7;
+  }
+
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .about-image {
+    flex: 1 1 45%;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+
+  .about-text {
+    flex: 1 1 50%;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #005B50; /* Deep Teal */
+    border-bottom: 3px solid #A5C639; /* Bright Leaf Green accent */
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .about-text p {
+    margin-bottom: 18px;
+    line-height: 1.6;
+    color: #2B2B2B; /* Black text */
+    font-size: 1rem;
+  }
+
+  .about-text .partners {
+    font-weight: bold;
+    color: #2BAE8E; /* Aqua Green */
+  }
+
+  @media (max-width: 900px) {
+    .about-container {
+      flex-direction: column;
+    }
+    .about-text h2 {
+      font-size: 1.6rem;
+    }
+    .about-image img {
+      height: 400px;
+      width: 440px;
+      object-fit:cover;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+   .services-section {
+    background-color: #F9FDFB; /* very light aqua background */
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #005B50; /* Deep Teal */
+  }
+
+  .services-container .intro-text {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1rem;
+    color: #2B2B2B; /* Neutral dark text */
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    justify-items: center;
+  }
+
+  .service-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .service-item h3 {
+    font-size: 1.1rem;
+    color: #2BAE8E; /* Aqua Green */
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .services-container h2 {
+      font-size: 1.6rem;
+    }
+    .service-item h3 {
+      font-size: 1rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 40px 0 20px;
+      color: #005B50; /* Deep Teal */
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 350px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+
+      .card {height: 600pxx;}
+    }
+
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      color: #2E6A57; /* Dark Green */
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #2BAE8E; /* Aqua Green */
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #A5C639; /* Bright Leaf Green */
+      color: #2B2B2B;
+    }
+
+
+
+
+
+  </style>
+
+
+
+</head>
+
+
+<body>
+
+
+
+    
+<!-- Top Banner -->
+<div class="top-banner">
+  <div class="contact-info">
+    <a href="tel:+2348105777706"><i class="fas fa-phone"></i> +234 810 577 7706</a>
+    <a href="tel:+2348127017075"><i class="fas fa-phone"></i> +234 812 701 7075</a>
+    <a href="mailto:info@jeoronconceptnigltd.com"><i class="fas fa-envelope"></i> info@jeoronconceptnigltd.com</a>
+  </div>
+  <div class="social-cart">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> 0 Items</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<header class="jeoron-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img style="width: 150px;
+                  height: 110px;
+                  " src="JEORON LOGO .png" alt="Jeoron Logo" />
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          
+   <li class="products">
+  <a href="product-page.html">Products</a>
+  <div class="product-preview">
+    <a href="product-page.html"><div class="product-title">JEORON MEGABOOST</div></a>
+    <img src="JEORON MEGABOOST+.png" alt="Jeoron Megaboost">
+  </div>
+</li>
+
+
+
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>    
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<div style="padding: px; background-color: white;
+            ;
+"></div>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Hero Section -->
+  <section class="fumigation-hero">
+    <div class="fumigation-hero-content">
+      <h1>Jeoron Fumigation Services</h1>
+      <p>The Pest Management Professionals</p>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section class="about-section">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="image/newfumigationimage.jpg" alt="Jeoron Fumigation Service">
+    </div>
+    <div class="about-text">
+      <h2>A Trusted Name in Nigeria’s Pest Control Industry</h2>
+      <p>
+        Jeoron Fumigation is on a mission to raise the standard of pest control and environmental management across Nigeria. 
+        We provide safe, reliable, and effective fumigation services for homes, offices, schools, hospitals, warehouses, 
+        and industries — protecting lives, properties, and businesses.
+      </p>
+      <p>
+        Since our establishment, Jeoron has earned a reputation for professionalism and results. 
+        From eradicating household pests to large-scale industrial fumigation, our team ensures every project is handled 
+        with precision, safety, and care.
+      </p>
+      <p>
+        While our operations are proudly based in Nigeria, our vision is to set the benchmark for pest management solutions, 
+        expanding our services to meet growing needs and contributing to a healthier, pest-free environment for all.
+      </p>
+      <p class="partners">
+        We are trusted by property managers, schools, hotels, and private clients who rely on Jeoron for 
+        consistent, effective pest control solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="services-section">
+  <div class="services-container">
+    <h2>Our Professional Services</h2>
+    <p class="intro-text">
+      At Jeoron Fumigation, we are committed to protecting homes, businesses, and communities across Nigeria 
+      with reliable pest control, fumigation, and hygiene solutions. 
+      Our services are designed to ensure safety, health, and peace of mind — no matter the scale of your needs.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="image/fumigator-100x100.png" alt="Fumigation">
+        <h3>Fumigation</h3>
+      </div>
+
+      <div class="service-item">
+        <img src="image/bug-100x100.png" alt="Pest Management">
+        <h3>Pest Management Solutions</h3>
+      </div>
+
+      <div class="service-item">
+        <img src="image/house-100x100.png" alt="Domestic & Commercial">
+        <h3>Domestic & Commercial Pest Control</h3>
+      </div>
+
+      <div class="service-item">
+        <img src="image/spray-100x100.png" alt="Cleaning & Hygiene">
+        <h3>Cleaning & Hygiene</h3>
+      </div>
+
+      <div class="service-item">
+        <img src="image/test-100x100.png" alt="Retail of Chemicals">
+        <h3>Retail of Chemicals</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h2 class="section-title">Explore Our Services</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <img src="image/churchfumigtion.jpg" alt="Church">
+      <div class="card-content">
+        <h3>Church</h3>
+        <p>Keep your place of worship safe and pest-free.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/schoolfumigation.jpg" alt="School">
+      <div class="card-content">
+        <h3>School</h3>
+        <p>Protect students with a clean, pest-free learning environment.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/officefumigtion.jpg" alt="Office">
+      <div class="card-content">
+        <h3>Office</h3>
+        <p>Boost productivity in a pest-free workplace.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/bankfumigation.jpg" alt="Bank">
+      <div class="card-content">
+        <h3>Bank</h3>
+        <p>Secure your business environment with professional fumigation.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/housefumigation.jpg" alt="House">
+      <div class="card-content">
+        <h3>House</h3>
+        <p>Protect your family with a safe, pest-free home.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/hallfumigation.jpg" alt="Hall">
+      <div class="card-content">
+        <h3>Hall</h3>
+        <p>Ensure pest-free comfort for every event</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    
+<div style="padding: 30px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Jeoron</a></li>
+        <li><a href="product-page.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Bloh</a></li>
+        <li><a href="https://wa.me/2349061614836?text=I%20am%20interested%20in%20JEORON%20MEGA%20BOOST" target="_blank">Book Appointment</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Opening Hours</h4>
+      <ul>
+        <li>Mon – Fri: 8:00am – 6pm</li>
+        <li>Sat: 9am – 4pm</li>
+      </ul>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h4>Newsletter</h4>
+      <p>Subscribe to get veterinary product updates and offers from Jeoron.</p>
+      <form>
+        <input type="text" placeholder="First Name" required />
+        <input type="email" placeholder="Email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+    <div class="scroll-top">
+      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+</script>
+
+
+
+
+
+
+
+</body>

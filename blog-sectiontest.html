@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jeoron Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+}
+
+.blog-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #2B2B2B;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #005B50;
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  margin: 0 5px;
+  border: none;
+  background: #005B50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #A5C639;
+  color: black;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background: #2BAE8E;
+}
+
+  </style>
+
+</head>
+<body>
+  <section class="blog-section">
+    <h2 class="section-title">Veterinary Insights & Tips</h2>
+    <div id="blog-cards" class="blog-grid">
+      <!-- Cards will be inserted by JS -->
+    </div>
+
+    <div class="pagination" id="pagination">
+      <!-- Pagination buttons will be inserted by JS -->
+    </div>
+  </section>
+
+
+
+  <script>
+    const blogs = [
+  {
+    title: "How to Store Vet Medicines Properly",
+    image: "image/1.jpg",
+    excerpt: "Learn the best ways to store your veterinary products to maintain their effectiveness and shelf life.",
+  },
+  {
+    title: "Common Mistakes in Animal Treatment",
+    image: "image/2.jpg",
+    excerpt: "Avoid these frequent errors many animal caregivers make when administering medicines.",
+  },
+  {
+    title: "Why Deworming Is Still Essential",
+    image: "image/3.jpg",
+    excerpt: "Even healthy animals need routine deworming. Here’s why it matters more than ever.",
+  },
+  {
+    title: "How to Spot Fake Veterinary Products",
+    image: "image/4.jpg",
+    excerpt: "Counterfeit products are rising. Learn how to identify authentic supplies.",
+  },
+  {
+    title: "Safe Use of Antibiotics in Poultry",
+    image: "image/5.jpg",
+    excerpt: "Understand the right way to apply antibiotics to avoid resistance and ensure proper health.",
+  },
+  {
+    title: "Benefits of Mega Boost for Animals",
+    image: "image/6.jpg",
+    excerpt: "Mega Boost is our top product. Find out how it helps your animals grow healthier and faster.",
+  },
+  {
+    title: "Export Documentation for Veterinary Supplies",
+    image: "image/7.jpg",
+    excerpt: "Need to export animal health products? Here's what to know.",
+  },
+  {
+    title: "How to Handle Heat Stress in Livestock",
+    image: "image/8.jpg",
+    excerpt: "Nigeria's climate can affect your animals. Here’s how to protect them.",
+  },
+  {
+    title: "Understanding Withdrawal Periods in Animals",
+    image: "image/9.jpg",
+    excerpt: "Do you know how long to wait after treatment before using animals for food or reproduction?",
+  },
+  {
+    title: "Vet Product Labeling: What You Should Check",
+    image: "image/10.jpg",
+    excerpt: "A quick guide on reading and understanding veterinary product labels.",
+  },
+  {
+    title: "5 Signs Your Animal Needs a Vet",
+    image: "image/11.jpg",
+    excerpt: "Spot illness early and treat before it becomes dangerous.",
+  },
+  {
+    title: "Best Practices for Transporting Medicine",
+    image: "image/12.jpg",
+    excerpt: "Whether by road or air, here’s how to keep products safe in transit.",
+  }
+];
+
+const cardsPerPage = 6;
+let currentPage = 1;
+
+function renderCards() {
+  const container = document.getElementById("blog-cards");
+  container.innerHTML = "";
+
+  const start = (currentPage - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const visibleCards = blogs.slice(start, end);
+
+  visibleCards.forEach((blog) => {
+    const card = document.createElement("div");
+    card.className = "blog-card";
+    card.innerHTML = `
+      <img src="${blog.image}" alt="${blog.title}">
+      <div class="blog-content">
+        <h3>${blog.title}</h3>
+        <p>${blog.excerpt}</p>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderPagination() {
+  const pageCount = Math.ceil(blogs.length / cardsPerPage);
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  for (let i = 1; i <= pageCount; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = i === currentPage ? "active" : "";
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderCards();
+      renderPagination();
+    });
+    pagination.appendChild(btn);
+  }
+}
+
+renderCards();
+renderPagination();
+
+  </script>
+
+
+
+</body>
+</html>
